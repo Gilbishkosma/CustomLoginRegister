@@ -1,0 +1,13 @@
+!local_settings.py
+*/__pycache__/
+*.pyc
+db.sqlite3
+*/migrations/*
+migrations/*
+.vscode/settings.json
+nohup.out
+
+static/*
+
+!.gitignore
+!*/migrations/__init__.py
