@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>UserLists:</h1>
+<br>
+<br>
+{% for n1 in object_list %}
+
+<a href="{% url 'userupdate' n1.id %}"><h1>{{n1.username}}</h1></a>
+
+{% endfor %}
+
+{% endblock%}
