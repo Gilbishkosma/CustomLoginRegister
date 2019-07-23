@@ -120,7 +120,7 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'homepage'
 LOGOUT_REDIRECT_URL = 'homepage'
 

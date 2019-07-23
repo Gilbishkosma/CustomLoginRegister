@@ -21,10 +21,10 @@ class CustomUserCreationForm(UserCreationForm):
 	 	 user.education.set(self.cleaned_data['education'])
 	 	 return user
 
-
+#To update userdetail
 class CustomUserUpdateForm(forms.ModelForm):
 	 education = forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple,queryset=Education.objects.all())
-	 
+	 email = forms.CharField(required=True)
 	 class Meta:
 	 	model = CustomUser
 	 	fields = ('username','email','sex','state','education','interest')

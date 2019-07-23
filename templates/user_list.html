@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
-
-
 {% block content %}
-<h1>UserLists:</h1>
-<br>
-<br>
-{% for n1 in object_list %}
-
-<a href="{% url 'userupdate' n1.id %}"><h1>{{n1.username}}</h1></a>
-
+<h1>Users: </h1>
+{% for user in object_list %}
+<div class="card">
+	<div class="card-body">
+  <span class="font-weight-bold"><a href="{% url 'userupdate' user.id%}">{{user.username}}</a>
+  </span>&middot;<br>
+  <span class="text-muted"> Email: {{ user.email }}</span><br> 
+  {% if user.first_name %}
+  <span class="text-muted"> FirstName: {{ user.first_name }}</span> <br>
+  {% endif %}
+  {% if user.last_name %}
+  <span class="text-muted"> LastName: {{ user.last_name }}</span><br>  
+  {% endif %}
+  </div>
+</div>
+<br/>
 {% endfor %}
-
-{% endblock%}
+{% endblock %}
