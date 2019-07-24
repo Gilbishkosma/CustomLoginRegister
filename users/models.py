@@ -6,6 +6,7 @@ from app.models import State,Education,Interest
 
 Gender_choices = [('Male','Male'),('Female','Female')]
 
+
 class CustomUser(AbstractUser):
 	sex = models.CharField(max_length=100,choices=Gender_choices,null=True,blank=False,default='Male')
 	state = models.ForeignKey(State,on_delete=models.DO_NOTHING,related_name='userstate',null=True,blank=False)

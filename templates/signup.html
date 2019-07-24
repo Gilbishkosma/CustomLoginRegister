@@ -6,6 +6,47 @@
 <form method="post">
 {% csrf_token %}
 {{form|crispy}}
-<button type="submit" class="btn btn-success">SignUp</button>
-</form
+
+<label for="id_accept_0" class="col-form-label  requiredField">Accept<span class="asteriskField">*</span></label>
+<div id="div_id_accept" class="form-group"> 
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="agree" value="option1">
+  <label class="form-check-label" for="agree">Agree</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="disagree" value="option2" checked="checked">
+  <label class="form-check-label" for="disagree">Disagree</label>
+</div>
+
+</div>
+<button id="success" type="submit" class="btn btn-success">SignUp</button>
+</form>
+
+
+<script>
+ subbtn = document.getElementById('success')
+ subbtn.disabled = true
+ console.log("abcd")
+ agree = document.getElementById('agree')
+ agree.addEventListener('click',function(){
+ 		if(agree.checked){
+ 			subbtn.disabled = false;
+ 			}
+ })
+
+ disagree = document.getElementById('disagree')
+ disagree.addEventListener('click',function(){
+ 		if(disagree.checked){
+ 			subbtn.disabled = true;
+ 		}
+ })
+
+var a =document.getElementsByClassName('form-check')
+var i;
+for (i = 0; i < a.length; i++) {
+ var b = a[i]
+ b.className += " form-check-inline"
+}
+
+</script>
 {% endblock %}

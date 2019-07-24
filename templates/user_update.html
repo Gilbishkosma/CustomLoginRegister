@@ -7,5 +7,16 @@
 {% csrf_token %}
 {{form|crispy}}
 <button type="submit" class="btn btn-success">Update</button>
-</form
+</form>
+
+
+
+<script>
+var a =document.getElementsByClassName('form-check')
+var i;
+for (i = 0; i < a.length; i++) {
+ var b = a[i]
+ b.className += " form-check-inline"
+}
+</script>
 {% endblock %}
